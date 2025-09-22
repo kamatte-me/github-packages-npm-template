@@ -1,0 +1,71 @@
+{
+  "name": "@kamatte-me/github-packages-npm-template",
+  "version": "0.0.0",
+  "description": "GitHub Packages npm Package Template",
+  "keywords": [],
+  "homepage": "https://github.com/@kamatte-me/github-packages-npm-template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamatte-me/github-packages-npm-template.git"
+  },
+  "license": "UNLICENSED",
+  "author": "kamatte-me",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      },
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "lint": "biome check .",
+    "lint:fix": "biome check --fix .",
+    "lint:ci": "biome ci .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "changeset:version": "changeset version && pnpm lint:fix",
+    "changeset:publish": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "@changesets/changelog-github": "0.5.1",
+    "@changesets/cli": "2.29.7",
+    "@types/node": "22.18.6",
+    "publint": "0.3.13",
+    "rollup-plugin-node-externals": "8.1.1",
+    "typescript": "5.9.2",
+    "vite": "7.1.7",
+    "vite-plugin-dts": "4.5.4",
+    "vitest": "3.2.4"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.4.x"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@10.17.0",
+  "engines": {
+    "node": ">=10.3.x"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com"
+  }
+}
