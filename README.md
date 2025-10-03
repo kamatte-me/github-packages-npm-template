@@ -31,7 +31,7 @@ ESM/CJSに対応するnpmパッケージを作成し、GitHub Packagesにリリ�
 3. [`.github/workflows/snapshot-release.yml`](./.github/workflows/snapshot-release.yml)のパッケージ名部分を書き換えてください。
    ```diff
    - @kamatte-me/github-packages-npm-template
-   + @<your-org>/<repository-name>
+   + @<your-org>/<package-name>
    ```
 4. このREADMEを更新しましょう。
 5. [changeset-bot GitHub App](https://github.com/apps/changeset-bot)をGitHubリポジトリにインストールしてください。
